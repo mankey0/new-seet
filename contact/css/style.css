@@ -1,0 +1,605 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+
+[dir="rtl"] {
+    text-align: right;
+    direction: rtl;
+}
+
+[dir="ltr"] {
+    text-align: left;
+    direction: ltr;
+}
+
+
+
+
+/* navigation-bar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: 0.6s;
+    z-index: 1000000;
+}
+
+nav.sticky {
+    background-color: #0f1b4d;
+}
+
+/* nav logo */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-brand img {
+    width: 70px;
+}
+
+/* nav items */
+.navbar-nav .nav-link {
+    color: #fff;
+    margin: 0 10px;
+    position: relative;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #d46728;
+}
+
+/* underline on hover */
+.navbar-nav .nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #d46728;
+    transition: width 0.3s;
+    position: absolute;
+    left: 5;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 25px;
+}
+
+nav .icon:hover {
+    cursor: pointer;
+}
+
+/* nav button */
+.lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .nav-btn-lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 15px;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+}
+
+.navbar .nav-btn-lang:hover {
+    color: #d46728;
+    background-color: #fff;
+}
+
+.navbar .nav-btn-lang::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #d46728;
+    z-index: -1;
+    transition: 0.8s;
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+    height: 180%;
+}
+
+.navbar .nav-btn-lang:hover::before {
+    height: 0%;
+}
+
+.navbar-toggler {
+    margin-left: auto;
+}
+
+body[dir="rtl"] .navbar-toggler {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.navbar-toggler:not(:disabled):not(.disabled) {
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-toggler i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-toggler-icon {
+    margin-right: 15px;
+}
+
+.navbar-toggler:focus,
+.btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.offcanvas-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+[dir="rtl"] .offcanvas-header {
+    flex-direction: row-reverse;
+}
+
+.offcanvas-backdrop {
+    background-color: rgb(0, 0, 0, .5) !important;
+}
+
+.offcanvas.show .nav-link {
+    color: #0f1b4d;
+    transition: 0.3s;
+}
+
+.offcanvas-body {
+    text-align: left !important;
+}
+
+.navbar-nav {
+    align-items: flex-start !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #d46728 !important;
+}
+
+.navbar-nav .nav-link::after,
+.nav-item .dropdown-menu .dropdown-item::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #d46728;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.nav-item .dropdown-menu .dropdown-item {
+    position: relative;
+}
+
+[dir="ltr"] .nav-item .dropdown-menu .dropdown-item::after {
+    left: 0;
+}
+
+[dir="rtl"] .nav-item .dropdown-menu .dropdown-item::after {
+    right: 0;
+}
+
+.navbar-nav .nav-link:hover::after,
+.nav-item .dropdown-menu .dropdown-item:hover::after {
+    width: 35%;
+}
+.dropdown-menu .dropdown-item:hover {
+    color: #d46728 !important; 
+}
+.nav-item.dropdown:hover .custom-dropdown {
+    display: block;
+}
+
+.navbar-nav .dropdown-toggle::after {
+    display: none !important;
+}
+
+html[lang="ar"] .dropdown-menu {
+    direction: rtl;
+    text-align: right;
+}
+
+html[lang="en"] .dropdown-menu {
+    direction: ltr;
+    text-align: left;
+}
+
+nav .icon:hover {
+    cursor: pointer;
+}
+
+/* nav button */
+.lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .nav-btn-lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 15px;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+    color: #fff !important;
+    font-weight: bold;
+    border: none;
+}
+
+.navbar .nav-btn-lang:hover {
+    color: #d46728 !important;
+    background-color: #fff;
+}
+
+.navbar .nav-btn-lang::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: #d46728;
+    z-index: -1;
+    transition: 0.8s;
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+    height: 180%;
+}
+
+.navbar .nav-btn-lang:hover::before {
+    height: 0%;
+}
+
+.navbar-toggler {
+    margin-left: auto;
+}
+
+body[dir="rtl"] .navbar-toggler {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.navbar-toggler:not(:disabled):not(.disabled) {
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-toggler i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-toggler-icon {
+    margin-right: 15px;
+}
+
+.navbar-toggler:focus,
+.btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.offcanvas-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+[dir="rtl"] .offcanvas-header {
+    flex-direction: row-reverse;
+}
+
+.offcanvas-backdrop {
+    background-color: rgb(0, 0, 0, .5) !important;
+}
+
+.offcanvas.show .nav-link {
+    color: #0f1b4d;
+    transition: 0.3s;
+}
+
+.offcanvas-body {
+    text-align: left !important;
+}
+
+.navbar-nav {
+    align-items: flex-start !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #d46728 !important;
+}
+
+
+/* end navbar */
+/* /////////////////////////////////////// */
+
+/* banner  section*/
+.home {
+    height: 100vh;
+    width: 100%;
+}
+
+.home .banner {
+    min-height: 100%;
+    background-image: url(../images/img4-2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    color: #fff;
+    text-align: center;
+}
+
+.home .banner::before {
+    content: "";
+    position: absolute;
+    background-color: rgba(15, 27, 77, 0.4);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.home .banner .content-wrapper {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.home .banner .content #title_hero_1 {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.home .banner .content #title_hero_1 span {
+    display: inline-block;
+    font-size: 60px;
+    color: #d46728;
+}
+
+.home .banner .content #desc_hero_1 {
+    color: #fff;
+    font-size: 20px;
+
+}
+
+.banner .icons a {
+    text-decoration: none;
+}
+
+.banner .icons {
+    position: absolute;
+    top: 50%;
+    padding: 0px 30px;
+    transform: translateY(-45%);
+    z-index: 100;
+}
+
+
+[dir="rtl"] .banner .icons {
+    right: 0px;
+    left: auto;
+}
+
+[dir="ltr"] .banner .icons {
+    left: 0px; 
+    right: auto;
+}
+
+.banner .icons i {
+    display: block;
+    margin: 35px 0;
+    color: #fff;
+    font-size: 40px;
+    transition: all 0.6s;
+}
+
+.banner .icons i:hover {
+    transform: translateY(-10px);
+    color: #0f1b4d;
+    text-shadow: rgba(255, 255, 255, 1) 0px 5px 15px;
+}
+
+
+@media (max-width: 768px) {
+
+    .home .banner .content #title_hero_1 {
+        font-size: 30px;
+    }
+
+    .home .banner .content #title_hero_1 span {
+        font-size: 40px;
+    }
+
+    .banner .icons {
+        top: 45%;
+        padding: 0px;
+        margin: 10px 40px 0px 20px;
+    }
+
+    .banner .icons i {
+        font-size: 25px;
+    }
+}
+
+/* ///////////////////////////////////////////////// */
+/* ///////////////////////////// */
+
+.contact {
+    /* height: 70vh; */
+    width: 100%;
+    padding: 50px 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact .contact-title {
+    font-weight: 800;
+    font-size: 40px;
+    text-align: center;
+    font-family: "Archivo Black", sans-serif;
+    color: #d46728;
+    text-shadow: rgba(212, 103, 40, 0.35) 0px 5px 5px;
+}
+
+.contact .contact-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.contact .contact-cards .card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 200px;
+    border: none;
+    border-radius: 20px;
+    padding: 5px;
+    background: rgb(15, 27, 77);
+    background: linear-gradient(180deg, rgba(15, 27, 77, 1) 23%, rgba(212, 103, 40, 1) 100%);
+    color: #fff;
+    cursor: pointer;
+    transition: 1s;
+    margin: 20px;
+}
+.contact .contact-cards .card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.contact .contact-cards .card .card-body a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #fff;
+}
+.contact .contact-cards .card .card-body a:hover {
+        text-decoration: underline;
+}
+.contact .contact-cards .card:hover {
+    transform: scale(1.1);
+    box-shadow: rgba(15, 27, 77, 0.25) 0px 14px 28px, rgba(15, 27, 77, 0.22) 0px 10px 10px;
+}
+
+.contact .contact-cards .card i {
+    font-size: 30px;
+    color: #fff;
+}
+
+/* ////////////////////////////////// */
+.map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* ////////////////////////////////// */
+
+footer {
+    background-color: #0f1b4d;
+    color: #fff;
+}
+
+footer .btn {
+    background-color: #fff;
+    transition: .5s;
+}
+
+footer .btn:hover {
+    background-color: #fff !important;
+    color: #0f1b4d !important;
+    transform: scale(1.1);
+    box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 6px 6px;
+}
+
+
+.copyright {
+    direction: ltr;
+    font-size: 15px;
+}
